@@ -32,8 +32,8 @@ displays information on the module filename.m.
 
 | Module                  | Description                                                                         |
 |-------------------------| ----------------------------------------------------------------------------------- |
-| (CHANGES)               | Recent significant changes of the programs                                          |
-| (center.m)              | Centers data by subtracting the mean                                                |
+| [CHANGES](CHANGES)      | Recent significant changes of the programs                                          |
+| [center.m](center.m)    | Centers data by subtracting the mean                                                |
 | gcvfctn.m               | Evaluates generalized cross-validation function (auxiliary to gcvridge.m)           |
 | gcvridge.m              | Finds minimum of generalized cross-validation function for ridge regression         |
 | iridge.m                | Computes regression parameters by individual ridge regressions                      |
