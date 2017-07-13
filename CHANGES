@@ -1,0 +1,106 @@
+16-Apr-15   * Changed calling syntax of FMINBND in GCVRDIGE to be compatible with Octave 
+	      (suggested by Nir Krakauer)
+
+26-Aug-14   * Added an option to use other norms than the 2-norm for the error 
+	      to be minimized in K-fold cross-validation.
+
+15-Jul-14   * Changed default stagnation tolerance to 1e-2.
+	    * Added option to scale variables abitrarily, with given vector 
+	      of scale factors (rather than always standardizing variables, 
+	      which is inappropriate if the relative errors on the variables 
+	      differ greatly across the dataset).
+
+14-Aug-13   * Implemented an option to choose a TTLS truncation parameter by 
+	      K-fold cross-validation (added new functions KCV_TTLS and 
+	      KCVINDICES to do so). [Collaboration with Julien Emile-Geay.]
+
+15-Jul-13   * Made code more modular, with new functions MISSINGNESS_PATTERNS 
+	      and RESCALE. Updated syntax of several Matlab commands to be more 
+	      in line with newer Matlab versions.
+
+12-Nov-12   * Removed display option (always display diagnostics now)
+            * In each EM iteration, regressions are now only computed for 
+              each unique patterns of missigness in the data matrix, rather 
+              than for each row (using code from Julien Emile-Geay). This 
+	      speeds up the computations considerably if there are only a few 
+	      patterns of missigness (e.g., a staircase pattern of missigness 
+	      with broad 'steps')
+            * Cleaned up the driver module regem.m to remove some redundancy in 
+              the code
+
+09-Jun-12   * Added some comments on the computation of residual 
+              covariances to PTTLS.
+
+18-Feb-12   * Updated PEIGS so that it calls Matlab's full eigendecomposition
+              routine EIG unless the number of eigenpairs to be computed 
+              (rmax) is much less than the matrix dimension (only if rmax 
+              is much less than the matrix dimension is EIGS called, which 
+              then is faster than EIG).
+
+            * Added an option to select truncation parameters in
+              TTLS by a variety of (information-theoretic) selection
+              criteria, such as minimizers of the Akaike's
+              Information Criterion or Schwarz's and Rissanen's Mean
+              Description Length.
+
+20-Oct-10   * Fixed NANSTD. (It previously calculated an incorrect
+              estimate of the standard deviation.) (Error pointed
+              out by Ross Tulloch.)
+
+14-Oct-10   * Fixed syntax in REGEM line where it is checked whether a
+              TTLS truncation parameter is given. (Error pointed out
+              by Gavin Schmidt.)
+
+13-Aug-09   * Removed display option in call of EIGS in PEIGS.  The
+	          option created an error for a 1x1 input matrix (a bug
+              in Matlab's EIGS).
+
+03-Jul-07   * Corrected a problem in PEIGS with recent Matlab
+              implementations, in which eigenvalues were not
+              necessarily returned in descending order.   
+
+15-Mar-07   * Changed screen output of effective number of variables
+              (peff) in REGEM for TTLS option. REGEM was erroneously
+              writing out an effective number of degrees of
+              freedom, rather than an effective number of variables
+              (=truncation parameter). However, this was of no
+              consequence for the performance of the algorithm. 
+
+              Note that this definition of the effective number of
+              variables is not precise for TTLS. A better definition
+              would be based on the filter factor formulation of
+              Fierro et al. (1997), but obtaining these would
+              involve additional computation, which seems
+              unnecessary for this merely diagnostic output. 
+
+01-Jul-02   * Users reported problems due to changes in the calling 
+              sequence of EIGS in a beta version of an upcoming Matlab 
+              release. 
+
+08-Feb-02   * Minor changes in PEIGS and GCVRIDGE to improve downward 
+              compatibility with Matlab 5. Switched to multiple ridge 
+              regressions as default regularized regression method.
+
+02-Jan-01   * Adaptation to Matlab 6 (minor changes in PEIGS). REGEM now 
+              has an additional optional parameter OPTIONS.minvarfrac, 
+              from which an upper bound on the regularization parameter
+              can be constructed. 
+
+04-Apr-00   * CovRes in REGEM is now a full matrix, no longer a
+              sparse matrix. Not allocating memory at initialization
+              of the sparse matrix had significantly slowed down the
+              algorithm.
+
+22-Mar-00   * All variables in a dataset are now scaled at the
+              beginning of an EM iteration and regularization in
+              standard form is performed. Before, in each individual 
+              record only the variables with available values were 
+              scaled. Scaling all variables slightly changes the
+              objective of generalized cross-validation: instead of
+              estimating the regularization parameter for which the
+              expected *ms error* of the imputed values is minimum,
+              GCV now estimates the regularization parameter for
+              which the expected *relative ms error* of the imputed
+              values is minimum. REGEM with MRIDGE might thus produce
+              slightly different results; however, REGEM with IRIDGE
+              should produce the same results as before.
