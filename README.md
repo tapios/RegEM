@@ -30,23 +30,23 @@ displays information on the module filename.m.
 
 # Module Descriptions
 
-| Module                  | Description                                                                         |
-|-------------------------| ----------------------------------------------------------------------------------- |
-| [CHANGES](CHANGES)      | Recent significant changes of the programs                                          |
-| [center.m](center.m)    | Centers data by subtracting the mean                                                |
-| gcvfctn.m               | Evaluates generalized cross-validation function (auxiliary to gcvridge.m)           |
-| gcvridge.m              | Finds minimum of generalized cross-validation function for ridge regression         |
-| iridge.m                | Computes regression parameters by individual ridge regressions                      |
-| kcv_ttls.m              | Selects truncation parameter for TTLS by K-fold cross-validation                    |
-| kcvindices.m            | Returns random indices for K-fold cross-validation                                  |
-| missingness_patterns.m  | Returns unique patterns of missing values in a data matrix                          |
-| mridge.m                | Computes regression parameters by a multiple ridge regression                       |
-| nancov.m                | Sample covariance matrix of available values in incomplete dataset                  |
-| nanmean.m               | Sample mean of available values in incomplete dataset                               |
-| nanstd.m                | Standard deviation of available values in incomplete dataset                        |
-| nansum.m                | Sum over available values in incomplete dataset                                     |
-| pca_truncation_criteria.m | Computes criteria for truncating principal component analyses                     |
-| peigs.m                 | Computes positive eigenvalues and corresponding eigenvectors                        |
-| pttls.m                 | Computes regression parameters by truncated total least squares                     |
-| regem.m                 | Driver module for regularized EM algorithm                                          |
-| standardize.m           | Standardizes data by subtracting the mean and scaling with the standard deviation   |
+| Module                                | Description                                                                         |
+|-------------------------              | ----------------------------------------------------------------------------------- |
+| [CHANGES](CHANGES)                    | Recent significant changes of the programs                                          |
+| [center.m](center.m)                  | Centers data by subtracting the mean                                                |
+| [gcvfctn.m](gcvfctn.m)                | Evaluates generalized cross-validation function (auxiliary to gcvridge.m)           |
+| [gcvridge.m](gcvridge.m)              | Finds minimum of generalized cross-validation function for ridge regression         |
+| [iridge.m](iridge.m)                  | Computes regression parameters by individual ridge regressions                      |
+| [kcv_ttls.m](kcv_ttls.m)              | Selects truncation parameter for TTLS by K-fold cross-validation                    |
+| [kcvindices.m](kcvindices.m)          | Returns random indices for K-fold cross-validation                                  |
+| [missingness_patterns.m](missingness_patterns.m)  | Returns unique patterns of missing values in a data matrix                          |
+| [mridge.m](mridge.m)                  | Computes regression parameters by a multiple ridge regression                       |
+| [nancov.m](nancov.m)                  | Sample covariance matrix of available values in incomplete dataset                  |
+| [nanmean.m](nanmean.m)                | Sample mean of available values in incomplete dataset                               |
+| [nanstd.m](nanstd.m)                  | Standard deviation of available values in incomplete dataset                        |
+| [nansum.m](nansum.m)                  | Sum over available values in incomplete dataset                                     |
+| [pca_truncation_criteria.m](pca_truncation_criteria.m) | Computes criteria for truncating principal component analyses                     |
+| [peigs.m](peigs.m)                    | Computes positive eigenvalues and corresponding eigenvectors                        |
+| [pttls.m](pttls.m)                    | Computes regression parameters by truncated total least squares                     |
+| [regem.m](regem.m)                    | Driver module for regularized EM algorithm                                          |
+| [standardize.m](standardize.m)        | Standardizes data by subtracting the mean and scaling with the standard deviation   |
