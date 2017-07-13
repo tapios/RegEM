@@ -7,7 +7,7 @@ This repository contains a collection of Matlab modules for
 
 The modules implement the regularized EM algorithm described in
 
-T. Schneider, 2001: Analysis of incomplete climate data: Estimation of mean values and covariance matrices and imputation of missing values. Journal of Climate, 14, 853-871. http://dx.doi.org/10.1175/1520-0442(2001)014%3C0853:AOICDE%3E2.0.CO;2
+T. Schneider, 2001: [Analysis of incomplete climate data: Estimation of mean values and covariance matrices and imputation of missing values.](http://dx.doi.org/10.1175/1520-0442(2001)014%3C0853:AOICDE%3E2.0.CO;2) Journal of Climate, 14, 853-871. 
 
 The EM algorithm for Gaussian data is based on iterated linear regression analyses. In the regularized EM algorithm, a regularized estimation method replaces the conditional maximum likelihood estimation of regression parameters in the conventional EM algorithm for Gaussian data. The modules here provide truncated total least squares (with fixed truncation parameter) and ridge regression with generalized cross-validation as regularized estimation methods.
 
@@ -22,7 +22,9 @@ The program package consists of several Matlab modules. To install the programs,
 
 Starting Matlab and invoking Matlab's online help function
 
+```
 help filename
+```
 
 displays information on the module filename.m.
 
@@ -30,8 +32,8 @@ displays information on the module filename.m.
 
 | Module                  | Description                                                                         |
 |-------------------------| ----------------------------------------------------------------------------------- |
-| CHANGES                 | Recent significant changes of the programs                                          |
-| center.m                | Centers data by subtracting the mean                                                |
+| (CHANGES)               | Recent significant changes of the programs                                          |
+| (center.m)              | Centers data by subtracting the mean                                                |
 | gcvfctn.m               | Evaluates generalized cross-validation function (auxiliary to gcvridge.m)           |
 | gcvridge.m              | Finds minimum of generalized cross-validation function for ridge regression         |
 | iridge.m                | Computes regression parameters by individual ridge regressions                      |
